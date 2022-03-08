@@ -51,10 +51,10 @@ public class ItemGridTester
     
     // TEST PART B
     System.out.println("\n---- TESTING PART B ----");
-    
+
     double actualAverage = ig.findAverage();
     double expectedAverage = 9.5;
-    
+
     if (actualAverage == expectedAverage)
     {
       System.out.println("Tesing Part B PASSED!");

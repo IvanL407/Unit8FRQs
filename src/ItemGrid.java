@@ -34,7 +34,25 @@ public class ItemGrid
   */
   public String mostValuableNeighbor(int r, int c)
   {
-    /* to be implemented in part (a) */
+    String mostValuable = grid[r][c].getName();
+    int max = grid[r][c].getValue();
+    if (isValid(r, c - 1))
+    {
+        if (grid[r][c - 1].getValue() > max)
+        {
+            mostValuable = grid[r][c - 1].getName();
+            max = grid[r][c - 1].getValue();
+        }
+    }
+      if (isValid(r, c + 1))
+      {
+          if (grid[r][c + 1].getValue() > max)
+          {
+              mostValuable = grid[r][c + 1].getName();
+              max = grid[r][c + 1].getValue();
+          }
+      }
+      return mostValuable;
   }
 
   /** Returns the average value of all the items in grid,
@@ -42,6 +60,16 @@ public class ItemGrid
    */
   public double findAverage()
   {
-    /* to be implemented in part (b) */
+    double total = 0;
+    int count = 0;
+    for (int rows = 0; rows < grid.length; rows++)
+    {
+        for (int cols = 0; cols < grid[0].length; cols++)
+        {
+            total += grid[rows][cols].getValue();
+            count++;
+        }
+    }
+    return (total / count);
   }
 }
